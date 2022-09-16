@@ -88,14 +88,20 @@ int main() {
 
     int n;
     scanf("%d", &n);
-    printf("%d", min_cnt);
     for (int i = 0; i < n; i++) {
         int x;
         scanf("%d", &x);
-        min_push(x);
-    }
-    for (int i = 0; i < min_cnt; i++) {
-        printf("%d ", min_heap[i]);
+        if (max_cnt == min_cnt) {
+            max_push(x);
+        }
+        else min_push(x);
+        if (max_cnt >= 1 && min_cnt >= 1 && max_heap[1] > min_heap[1]) {
+            int max_top = max_pop();
+            int min_top = min_pop();
+            max_push(min_top);
+            min_push(max_top);
+        }
+        printf("%d\n", max_heap[1]);
     }
     return 0;
 }
