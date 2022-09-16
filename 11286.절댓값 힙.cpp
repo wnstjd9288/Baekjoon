@@ -54,7 +54,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int x;
         scanf("%d", &x);
-        if (x == 0)printf("%d\n",pop());
+        if (x == 0)printf("%d\n", pop());
         else {
             push(x);
         }
